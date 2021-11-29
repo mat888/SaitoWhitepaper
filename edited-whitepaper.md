@@ -1,9 +1,3 @@
-Saito Consensus: Fixing the Market Failures in Bitcoin
-
-Edited
-
-Abstract
-
 Saito fixes the collective action problems that impede scaling in proof-of-work and proof-of-stake blockchains by coupling a finite ledger to a consensus mechanism that incentivizes the collection and sharing of transaction requests and the fees associated. The resulting network pays not just for (mining and staking) [Saito does in fact mine and stake, or is this a only reference to the status quo?], but for all activities that contribute economic value to the network. In the process, Saito fully eliminates majoritarian as well as other attacks.
 
 Saito pays user-serving infrastructure nodes out of an open consensus mechanism. This incentive gives economic motivation for the network to scale with new users and can be used to build secure decentralized versions of many data heavy services, such as un-atroturfable data exchanges, authentication and monetization applications, distributed key registries, payment channels and much more.
@@ -12,7 +6,7 @@ In economic terms, Saito can be understood as a solution for inducing a free mar
 
 The next section describes briefly the economic problems that need to be solves in order to build a scalable blockchain. The following sections outline how Saito solves these problems and describes an implementation of these methodss.
 
-1. The Problem
+1. THE PROBLEM
 
 The problem with blockchain scaling is not at the network technology layer: at the time of writing, data centers around the world are implementing 400Gbps network switches while 100Gbps connections are becoming standard even in lower-tier colocation facilities. Given the resources to pay for the necessary equipment there are only constraints from current consensus mechanisms which prevent a blockchain from being as decentralized, open and efficient as the public Internet backbone.
 
@@ -51,13 +45,19 @@ While this avoids the problem of the blockchain growing too large for network no
 3. ELIMINATING FREE-RIDING
 [Figures in this section should be titled: "Routing Work Required"
 
-In Saito any node can create a block at any time provided is has enough "routing work" accumulated for its proposed block, i.e. in its mempool. The amount of "routing work" required to produce a block depends on how quickly the proposed block follows the most recent one: consensus rules dictate that the work required starts high and linearly decreases with time until it reaches zero. Since block producers will issue blocks as soon as it becomes profitable, the pace of block production is a function of the overall amount of "routing work" fulfilled by the network. 
+In Saito any node can create a block at any time provided is has enough "routing work" accumulated for its proposed block, i.e. in its mempool. The amount of "routing work" required to produce a block depends on how quickly the proposed block follows the most recent one: consensus rules dictate that the work required starts high and linearly decreases with time until it reaches zero. Since block producers will issue blocks as soon as it becomes profitable, the pace of block production is a function of the overall amount of "routing work" fulfilled by the network.
+
+Figure 1: The Burn Fee Curve
 
 Saito derives routing work from the transaction fee embedded in every transaction. Using this measure of work to produce blocks makes attacking the network expensive, since making claims about time cost money. It can be seen from Figure 2 that it is impossible for attackers to produce blocks at a faster rate than the main chain unless they have access to a larger pool of transaction fees. To secure this mechanism, Saito has routing nodes cryptographically sign transactions as they propegate through the network. Consensus rules specify that the amount of routing work a transaction provides any node drops with the number of hops in its routing path, and that transactions provide no usable routing work to nodes that are not in their routing path. The work used to produce blocks now becomes the efficient collection and sharing of inbound network fees.
+
+Figure 2: Good Actor Burn Fee Costs...
 
 As long as there is no payment for block production, this system offers comparable security to Bitcoin: cost-of-attack can always be quantified and attackers must spend their own money to attack the chain. This allows users to wait however many block confirmations are needed to meet their security requirements. As a bonus, the network can increase the amount of routing work needed for block production to keep blocktime constant as transaction volume grows, so that security scales with fee-volume. 
 
 The major problem with this approach lies in the consequences of requiring the network to burn fees to produce routing work:
+
+Figure 3: Deflation of Burn Fee Over Time
 
 Avoiding a deflationary crash requires the network to conserve its token supply, but fees from routing work cannot be given directly to block producers, as that would allow attackers to use the income from one block to generate their routing work needed to produce the next. Dividing up the payment between different nodes is preferable, but as long as block-producers have any influence over go gets paid a savvy attacker can sybil the network or conduct grinding attacks that target the token-issuing mechanism.
 
