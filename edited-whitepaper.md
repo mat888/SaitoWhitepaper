@@ -1,6 +1,7 @@
 Some editor notes:
 
 -----------------------------------------------------
+
 There may be technical inaccuracies. My strategy in editing was to fully understand as I read and change content to better enable the understanding from a newbie's POV. I tried not to change content without feeling I understood it, but someone more experienced will have to be the final auditors.
 
 Whole paper changed to third person, as most of it was in third person. That means replacing use of 'we, us, etc.' with more omniscient diction.
@@ -14,6 +15,7 @@ Structure remains mostly the same. Most edits are within single sentences and ke
 content in funny brackets []{} are notes not intended to be in the final paper, they are usually questions about if an edit is accurate or acceptable
 
 footnotes were not looked at in this edit
+
 -----------------------------------------------------
 
 Saito fixes the collective action problems that impede scaling in proof-of-work and proof-of-stake blockchains by coupling a finite ledger to a consensus mechanism that incentivizes the collection and sharing of transaction requests and the fees associated. The resulting network pays not just for (mining and staking) [Saito does in fact mine and stake, or is this a only reference to the status quo?], but for all activities that contribute economic value to the network. In the process, Saito fully eliminates majoritarian as well as other attacks.
