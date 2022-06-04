@@ -1,4 +1,4 @@
-
+This expands many concepts in the whitepaper in an attempt to be more understandable.
 
 Some editor notes:
 
