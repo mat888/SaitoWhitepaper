@@ -1,6 +1,3 @@
-Fixes 4 objective typos, and makes many subjective improvements to the whitepaper without expanding too far or sacrificing the structural elegance of the original. 
-
-
 Abstract
 
 Saito fixes the collective action problems which impede scaling in proof-of-work and proof-of-stake blockchains by coupling a circular (finite) ledger to a consensus mechanism that incentivizes the collection and sharing of transactions and their fees. Saito's measure of 'work' is more granular than traditional blockchain, rewarding the work of distributing transaction data across the network rather than solely paying for mining or staking for the privilege of authoring a block. Blocks in Saito are published as soon as they contain enough 'routing work' and rewards are unlocked via a hash lottery in subsequent blocks - the result is the full elimination of sustainable or profitable majoritarian (such as 51%) attacks in a blockchain which scales according to market demand.
